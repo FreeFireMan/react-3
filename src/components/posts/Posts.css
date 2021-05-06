@@ -1,0 +1,15 @@
+.maine-box {
+    display: flex;
+}
+
+.post-list {
+    border: 2px solid green;
+    width: fit-content;
+    padding: 10px;
+}
+
+.text {
+    border: 2px solid darkgoldenrod;
+    width: fit-content;
+    padding: 10px;
+}
