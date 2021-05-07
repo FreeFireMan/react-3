@@ -5,17 +5,46 @@
 
 import Users from "./components/users/Users";
 import Posts from "./components/posts/Posts";
+import Comments from "./components/comments/Comments";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import User from "./components/user/User";
 
 function App() {
     return (
-        <div>
+        <Router>
             <div>
-                <Users/>
+                <Link to={'users'}>open users</Link>
             </div>
             <div>
-                <Posts/>
+                <Link to={'posts'}>open posts</Link>
             </div>
-        </div>
+            <div>
+                <Link to={'comments'}>open comments</Link>
+            </div>
+
+            <Switch>
+                <Route path={'/users'} render={()=><Users/>}/>
+                <Route path={'/posts'} render={()=><Posts/>}/>
+                <Route path={'/comments'} render={()=><Comments/>}/>
+            </Switch>
+        </Router>
+
+        // <div>
+        //     <div>
+        //         <Users/>
+        //     </div>
+        //     <div>
+        //         <Posts/>
+        //     </div>
+        //     <div>
+        //         <Comments/>
+        //     </div>
+        // </div>
     );
 }
 
