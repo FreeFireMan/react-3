@@ -12,7 +12,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import User from "./components/user/User";
+
 
 function App() {
     return (
@@ -34,17 +34,7 @@ function App() {
             </Switch>
         </Router>
 
-        // <div>
-        //     <div>
-        //         <Users/>
-        //     </div>
-        //     <div>
-        //         <Posts/>
-        //     </div>
-        //     <div>
-        //         <Comments/>
-        //     </div>
-        // </div>
+
     );
 }
 
