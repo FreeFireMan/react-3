@@ -1,12 +1,9 @@
 import Users from "./components/users/Users";
 import Posts from "./components/posts/Posts";
 import Comments from "./components/comments/Comments";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import User from "./components/user/User";
+import Description from "./components/Description/Description";
 
 
 function App() {
@@ -23,9 +20,15 @@ function App() {
             </div>
 
             <Switch>
-                <Route path={'/users'} render={()=><Users/>}/>
-                <Route path={'/posts'} render={()=><Posts/>}/>
-                <Route path={'/comments'} render={()=><Comments/>}/>
+                <Route path={'/users'} render={(props) => <Users {...props}/>}/>
+                <Route path={'/posts'} render={() => <Posts/>}/>
+                <Route path={'/comments'} render={() => <Comments/>}/>
+
+                <Route exact={true} path={'/users/:id'}
+                       render={(props) => {
+                           let {match: {param: {id}}} = props
+                           return <Description userId={id}/>
+                       }}/>
             </Switch>
         </Router>
 

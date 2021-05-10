@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import User from "../user/User";
 
 
-export default function Users() {
+export default function Users({match: {url}}) {
 
     let [users, setUsers] = useState([])
 
@@ -17,7 +17,7 @@ export default function Users() {
 
         <div>
             {
-                users.map(value => <User item={value}/>)
+                users.map(value => <User item={value} url={url}/>)
             }
         </div>
 
