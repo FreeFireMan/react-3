@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import User from "../user/User";
 import Description from "../Description/Description";
-import './Users.css'
+
 
 export default function Users() {
 
@@ -21,8 +21,8 @@ export default function Users() {
     }
 
     return (
-        <div className='content'>
-            <div className='users-list'>
+        <div>
+            <div>
                 {
                     users.map(value => <User item={value} find={find}/>)
                 }

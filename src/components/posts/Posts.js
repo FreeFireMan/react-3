@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Post from "../Post/Post";
-import './Posts.css'
+
 
 export default function Posts() {
 
@@ -22,15 +22,15 @@ export default function Posts() {
 
     return (
 
-        <div className='maine-box'>
-            <div className='post-list'>
+        <div>
+            <div>
 
                 {
                     posts.map(value => <Post key={value.id} post={value} search={search}/>)
                 }
 
             </div>
-            <div className='text'>
+            <div>
                 {
                     text && <div>
                         <h3>{text.id}  {text.title}</h3>

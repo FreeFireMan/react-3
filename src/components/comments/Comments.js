@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Comment from "../Comment/Comment";
-import './Comments.css'
+
 
 export  default function Comments() {
 
@@ -19,13 +19,13 @@ export  default function Comments() {
     }
 
     return (
-        <div className="wrapper">
-            <div className='com-list'>
+        <div>
+            <div>
                 {
                     comments.map(item => <Comment key={item.id} item={item} showComment={showComment}/>)
                 }
             </div>
-            <div className='one-comment'>
+            <div>
                 {
                     oneComment && <div>
                         <h3>{oneComment.id} - {oneComment.name}</h3>
