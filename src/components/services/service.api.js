@@ -12,12 +12,6 @@ const getInventories = () => {
     return axiosInstance.get('/inventory')
 }
 
-const getInventory = (id) => {
-    return axiosInstance.get('/inventory/'+id)
-}
 
-const getCharacter = (id) => {
-    return axiosInstance.get('/characters/'+id)
-}
 
-export {getCharacters, getInventories, getInventory, getCharacter}
+export {getCharacters, getInventories}
