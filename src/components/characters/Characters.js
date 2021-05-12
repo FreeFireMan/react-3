@@ -9,7 +9,6 @@ export default function Characters({match:{url}}) {
         getCharacters().then(value => setCharacters([...value.data]))
     }, [])
 
-
     return (
         <div>
             {
