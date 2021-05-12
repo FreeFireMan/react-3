@@ -15,6 +15,8 @@ export default function Description(props) {
     }, [])
 
 
+
+
     return (
         <div>
             <h3>{`${characters[id - 1]?.id}.
@@ -23,6 +25,16 @@ export default function Description(props) {
                 {`age: ${characters[id - 1]?.age}, gender: ${characters[id - 1]?.gender},
             species: ${characters[id - 1]?.species}`}
             </p>
+
+            {/*<img src={characters[id-1]?.image.main}/>*/}
+            
+            <p> sayings: {
+                characters[id-1]?.sayings.map(value => <div>{value}</div>)
+            }</p>
+            <p>
+                {`occupation: ${characters[id-1]?.occupation}, homePlanet: ${characters[id-1]?.homePlanet} `}
+            </p>
+
         </div>
     )
 
