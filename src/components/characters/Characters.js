@@ -13,7 +13,7 @@ export default function Characters({match:{url}}) {
     return (
         <div>
             {
-                characters.map(value => <Character item={value} name={value.name} url={url}/>)
+                characters.map(value => <Character item={value} name={value.name} image={value.image} url={url}/>)
             }
         </div>
     )

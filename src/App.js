@@ -13,6 +13,7 @@ import Description from "./components/descriptionCharacter/Description";
 import Inventory from "./components/inventory/Inventory";
 import Details from "./components/details/Details";
 
+
 function App() {
     return (
         <Router>
@@ -28,12 +29,15 @@ function App() {
 
             <Switch>
                 <Route exact={true} path={'/characters'} render={(props) => <Characters {...props}/>}/>
+                <Route exast={true} path={'/characters/undefined'} render={()=> <div>undefined id</div>}/>
                 <Route exact={true} path={'/characters/:id'}
                        render={(props) => <Description {...props}/>}/>
+
 
                 <Route exact={true} path={'/Inventory'} render={(props) => <Inventory {...props}/>}/>
                 <Route exact={true} path={'/Inventory/:id'}
                        render={(props) => <Details {...props}/>}/>
+
             </Switch>
 
 
@@ -41,6 +45,6 @@ function App() {
 
 
     );
-}
+};
 
 export default App;

@@ -19,15 +19,19 @@ export default function Description(props) {
 
     return (
         <div>
-            <h3>{`${characters[id - 1]?.id}.
-             ${characters[id - 1]?.name.first} ${characters[id - 1]?.name.middle} ${characters[id - 1]?.name.last}`}</h3>
+
+            <h3>
+                { `${characters[id - 1]?.id}.
+             ${characters[id - 1]?.name.first} ${characters[id - 1]?.name.middle} 
+             ${characters[id - 1]?.name.last}`}
+            </h3>
             <p>
                 {`age: ${characters[id - 1]?.age}, gender: ${characters[id - 1]?.gender},
             species: ${characters[id - 1]?.species}`}
             </p>
 
-            {/*<img src={characters[id-1]?.image.main}/>*/}
-            
+            <img src={characters[id-1]?.images.main}/>
+
             <p> sayings: {
                 characters[id-1]?.sayings.map(value => <div>{value}</div>)
             }</p>

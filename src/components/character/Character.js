@@ -2,11 +2,12 @@ import {Link} from "react-router-dom";
 
 export default function Character({item, name, url}) {
 
-   // console.log(item.id)
+// console.log(item)
     return (
         <div>
-            {item.id || 'id'} --
-            {name && `${name.first} ${name.middle} ${name.last}` || 'no name'} --
+            {item.id || item[0].id } --
+            {name && `${name.first} ${name.middle} ${name.last}`|| 'name'} --
+
             <Link to={`${url}/${item.id}`}>description</Link>
         </div>
     )
