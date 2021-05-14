@@ -8,14 +8,26 @@
 // при клыку на користувача відбувається перехід на сторінку з детальною інформацією користувача
 
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
-
+import Users from "./components/users/Users";
+import Details from "./components/details/Details";
 
 function App() {
     return (
-       <div>
+        <Router>
+            <Link to={{pathname: '/users', search:'?page=1'}}>Show users</Link>
 
-       </div>
+            <Switch>
+                <Route  exact={true} path={'/users'}
+                       render={(props) => <Users {...props}/>}/>
+                <Route path={'/users/:id'}
+                       render={(props)=><Details {...props}/>}/>
+            </Switch>
+
+
+        </Router>
+
+
     );
-};
+}
 
 export default App;
