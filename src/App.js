@@ -12,6 +12,9 @@ import Users from "./components/users/Users";
 import Details from "./components/details/Details";
 
 function App() {
+
+
+
     return (
         <Router>
             <Link to={{pathname: '/users', search:'?page=1'}}>Show users</Link>
@@ -19,8 +22,11 @@ function App() {
             <Switch>
                 <Route  exact={true} path={'/users'}
                        render={(props) => <Users {...props}/>}/>
-                <Route path={'/users/:id'}
+
+                <Route exact={true} path={'/users/:id'}
                        render={(props)=><Details {...props}/>}/>
+
+
             </Switch>
 
 
