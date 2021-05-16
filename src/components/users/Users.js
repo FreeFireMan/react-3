@@ -12,7 +12,7 @@ export default function Users(props) {
         fetch(`https://reqres.in/api/users` + search)
             .then(value => value.json())
             .then(value => setUsers(value.data))
-    }, [])
+    }, [search])
 
 
     const decrement = () => {
