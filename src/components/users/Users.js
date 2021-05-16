@@ -40,7 +40,6 @@ export default function Users(props) {
                 }
             </div>
             <button onClick={decrement}>last</button>
-            {search}
             <button onClick={increment}>next</button>
 
         </div>
