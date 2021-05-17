@@ -13,26 +13,16 @@ import Details from "./components/details/Details";
 
 function App() {
 
-
-
     return (
         <Router>
             <Link to={{pathname: '/users', search:'?page=1'}}>Show users</Link>
-
             <Switch>
                 <Route  exact={true} path={'/users'}
                        render={(props) => <Users {...props}/>}/>
-
                 <Route exact={true} path={'/users/:id'}
                        render={(props)=><Details {...props}/>}/>
-
-
             </Switch>
-
-
         </Router>
-
-
     );
 }
 

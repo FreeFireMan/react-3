@@ -1,10 +1,13 @@
 import {useEffect, useState} from "react";
+import {Link} from 'react-router-dom';
 import User from "../user/User";
 
 
 export default function Users(props) {
 
     let {location: {search}, match: {url}} = props
+
+    const page = new URLSearchParams(search);
 
     let [users, setUsers] = useState([])
 
@@ -14,34 +17,16 @@ export default function Users(props) {
             .then(value => setUsers(value.data))
     }, [search])
 
-
-    const decrement = () => {
-        let arraySearch = search.split('')
-        arraySearch[arraySearch.length - 1] = Number(arraySearch[arraySearch.length - 1]) - 1
-        search = arraySearch.join('')
-        console.log(search)
-        return search
-    }
-
-    const increment = () => {
-        let arraySearch = search.split('')
-        arraySearch[arraySearch.length - 1] = Number(arraySearch[arraySearch.length - 1]) + 1
-        search = arraySearch.join('')
-        console.log(search)
-        return search
-    }
-
-
     return (
         <div>
             <div>
                 {
-                    users.map(value => <User item={value} url={url}/>)
+                    users.map(value => <User key={value.id} item={value} url={url}/>)
                 }
             </div>
-            <button onClick={decrement}>last</button>
-            <button onClick={increment}>next</button>
-
+            <Link to={`users?page=${+page.get("page")+1}`}>
+                <button>next</button>
+            </Link>
         </div>
     );
 }
