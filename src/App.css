@@ -1,0 +1,8 @@
+.main-box {
+    background-color: rgba(172, 184, 11, 0.53);
+    border: solid 1px black;
+    margin: 10px;
+    padding: 20px;
+    width: fit-content;
+
+}
