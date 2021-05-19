@@ -3,44 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from "redux";
+import {BrowserRouter as Router} from "react-router-dom";
 import {Provider} from "react-redux";
-
-const initialState = {
-    counter: 0
-}
-
-const reducer = (state=initialState, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            return {
-                ...state, counter: state.counter + 1
-            }
-        case 'DECREMENT':
-            return {
-                ...state, counter: state.counter - 1
-            }
-        case 'PLUS_HUNDRED':
-            return {
-                ...state, counter: state.counter + 100
-            }
-        case 'MINUS_HUNDRED' :
-            return {
-                ...state, counter: state.counter - 100
-            }
-        default:
-            return state
-    }
-}
-
-
-const store = createStore(reducer)
-
+import {store} from './redux';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App/>
+            <Router>
+                <App/>
+            </Router>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
