@@ -8,7 +8,9 @@ const getPosts = () => {
     return axiosInstance.get('/posts')
 }
 
-
+const getComment = () => {
+    return axiosInstance.get('/comments')
+}
 export {
-    getPosts
+    getPosts, getComment
 }

@@ -1,6 +1,7 @@
 import './App.css'
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Posts from "./components/posts/Posts";
+import Comments from "./components/comments/Comments";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             </div>
 
             <Route path={'/posts'} render={() => <Posts/>}/>
+            <Route path={'/comments'} render={() => <Comments/>}/>
 
         </Router>
     );

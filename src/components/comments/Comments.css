@@ -1,0 +1,12 @@
+.comments-box {
+    display: flex;
+
+}
+
+.comments {
+    background-color: #7f94ff;
+}
+
+.single-comment {
+    background-color: rgba(191, 41, 47, 0.53);
+}
