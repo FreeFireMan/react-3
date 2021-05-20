@@ -1,0 +1,2 @@
+export const SET_POSTS = 'SET_POSTS';
+export const POST_DESCRIPTION = 'POST_DESCRIPTION'
