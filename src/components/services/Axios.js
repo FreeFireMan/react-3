@@ -11,6 +11,7 @@ const getPosts = () => {
 const getComment = () => {
     return axiosInstance.get('/comments')
 }
+
 export {
     getPosts, getComment
 }

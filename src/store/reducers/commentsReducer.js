@@ -5,19 +5,20 @@ const initialState = {
     commentDetails: {}
 }
 
-const commentsReducer = (state=initialState,action) => {
-    switch (action.type) {
+const commentsReducer = (state = initialState, action) => {
+    const {type, payload} = action
+    switch (type) {
         case SET_COMMENTS:
             return {
-                ...state, comments: action.payload
+                ...state, comments: payload
             };
         case COMMENT_DETAILS:
             return {
-                ...state, commentDetails: action.payload
+                ...state, commentDetails: payload
             }
         default:
             return state
     }
 }
 
-export default commentsReducer
+export default commentsReducer;

@@ -2,18 +2,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {getComment} from "../services/Axios";
 import {commentsDetails, setComments} from "../../store/action-creators";
 import {useEffect} from "react";
-import './Comments.css'
+import './Comments.css';
 
 export default function Comments() {
-
-    const comments = useSelector(({comments: {comments}}) => comments)
-    const commentDetails = useSelector(({comments: {commentDetails}}) => commentDetails)
-    const dispatch = useDispatch()
+    const {comments, commentDetails} = useSelector(({comments: {comments, commentDetails}}) => ({comments, commentDetails}));
+    const dispatch = useDispatch();
 
     const fetchComments = async () => {
-        const response = await getComment()
-        const payload = response.data
-        dispatch(setComments(payload))
+        const {data} = await getComment();
+        dispatch(setComments(data));
     }
 
     useEffect(() => {

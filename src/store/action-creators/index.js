@@ -1,2 +1,2 @@
-export * from './posts-actions-creators'
-export * from './comments-actions-creators'
+export * from './posts-actions-creators';
+export * from './comments-actions-creators';

@@ -1,13 +1,11 @@
-import './App.css'
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import './App.css';
+import {Link, Route, Switch} from "react-router-dom";
 import Posts from "./components/posts/Posts";
 import Comments from "./components/comments/Comments";
 
-
 function App() {
-
     return (
-        <Router>
+        <div>
             <div>
                 <Link to={'/'}>Home page</Link>
             </div>
@@ -29,11 +27,12 @@ function App() {
             <div>
                 <Link to={'/users'}>Users</Link>
             </div>
+            <Switch>
+                <Route path={'/posts'} render={() => <Posts/>}/>
+                <Route path={'/comments'} render={() => <Comments/>}/>
+            </Switch>
 
-            <Route path={'/posts'} render={() => <Posts/>}/>
-            <Route path={'/comments'} render={() => <Comments/>}/>
-
-        </Router>
+        </div>
     );
 }
 

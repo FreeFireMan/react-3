@@ -1,4 +1,4 @@
-import {POST_DESCRIPTION, SET_POSTS} from '../action-types/posts-action-types'
+import {POST_DESCRIPTION, SET_POSTS} from '../action-types';
 
 const initialState = {
     posts: [],
@@ -6,21 +6,22 @@ const initialState = {
 }
 
 const postsReducer = (state = initialState, action) => {
-    switch (action.type) {
+    const {type, payload} = action
+    switch (type) {
         case SET_POSTS:
             return {
                 ...state,
-                posts: action.payload
+                posts: payload
             }
         case POST_DESCRIPTION:
             return {
                 ...state,
-                description: action.payload
+                description: payload
             }
         default:
             return state
     }
 }
 
-export default postsReducer
+export default postsReducer;
 
